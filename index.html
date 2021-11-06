@@ -401,7 +401,9 @@
       <section class="product-container">
         <article class="product">
           <picture class="product-picture">
-            <source srcset="images/shop-item-desk1.jpg">
+            <source media="(min-width: 1200px)" srcset="images/shop-item-desk1.jpg">
+            <source media="(min-width:641px) and (max-width: 1199px)" srcset="images/shop-item-tablet1.jpg">
+            <source media="(max-width: 640px)" srcset="images/shop-item-mobile1.jpg">
             <img src="images/shop-item-desk1.jpg" alt="изображение подушек с модными принтами">
           </picture>
           <div class="content-product">  
@@ -425,7 +427,9 @@
 
         <article class="product">
           <picture class="product-picture">
-            <source srcset="images/shop-item-desk2.jpg">
+            <source media="(min-width: 1200px)" srcset="images/shop-item-desk2.jpg">
+            <source media="(min-width:641px) and (max-width: 1199px)" srcset="images/shop-item-tablet2.jpg">
+            <source media="(max-width: 640px)" srcset="images/shop-item-mobile2.jpg">
             <img src="images/shop-item-desk2.jpg" alt="изображение игрушки handmade">
           </picture>
           <div class="content-product">  
@@ -434,7 +438,7 @@
                 Интерьерная рукодельная кукла "Зайчик", созданию которой посвящена <a class="product-link" href="#0">весенняя серия постов</a> в блоге и несколько подкастов.
               </p> 
              <footer class="footer-product">
-               <div class="product-prices">
+               <div class="product-prices"..>
                 <span class="product-price">
                   <span class="product-price-value">3500₽</span>
                 </span>
@@ -446,7 +450,9 @@
 
         <article class="product">
           <picture class="product-picture">
-            <source srcset="images/shop-item-desk3.jpg">
+            <source media="(min-width: 1200px)" srcset="images/shop-item-desk3.jpg">
+            <source media="(min-width:641px) and (max-width: 1199px)" srcset="images/shop-item-tablet3.jpg">
+            <source media="(max-width: 640px)" srcset="images/shop-item-mobile3.jpg">
             <img src="images/shop-item-desk3.jpg" alt="изображение шестиугольной рамки">
           </picture>
           <div class="content-product">  
@@ -503,10 +509,52 @@
         </address>
           
         <a href="#0" class="copyright">
-          <span class="copyright-text">Copyright © 2009–2019 City Blog LLC.</span>
+          <p class="copyright-text">Copyright © 2009–2019 City Blog LLC.</p>
         </a>
           
        </div>  
       </footer>
+
+      <div class="popup_hidden">
+        <div class="popup-container">
+          <div class="popup-contant">
+            <form class="popup-form">
+              <header class="popup-header">
+                <h3 class="title-popup">ваш фидбек</h3>
+              </header>
+              <div class="form-group">
+                <label class="popup-choice">
+                  <span class="label-text">Как часто Вы заходите на сайт?</span>
+                  <select class="select">
+                    <option value="everyday" selected>Почти каждый день</option>
+                    <option value="once">Раз в неделю</option>
+                    <option value="first">Я здесь впервые</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-group form-radio-group">
+                <span class="label-text">Вы подписаны на e-mail рассылку?</span>
+                <label class="radio-group">
+                  <input type="radio" name="radio-group" class="radio">
+                  <span class="radio-group-text">Да</span>
+                </label>
+                <label class="radio-group">
+                  <input type="radio" name="radio-group" class="radio">
+                  <span class="radio-group-text">Нет</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="field-group">
+                  <span class="label-text">Расскажите, какой контент Вы бы хотели видеть на нашем сайте?</span>
+                  <textarea class="field-textarea" placeholder="Может, больше рецептов?" required></textarea>
+                </label>
+              </div>
+              <div class="form-group">
+                <button class="button" type="button">Отправить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
