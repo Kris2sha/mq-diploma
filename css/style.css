@@ -20,7 +20,7 @@
 
 .container {
   margin: auto;
-  
+  max-width: 1200px;
 }
 
 .header {
@@ -164,13 +164,14 @@
 }
 
 .trend {
-  width: 24.82%;
-  min-height: 320px;
   background-color: black;
   position: relative;
   z-index: 0;
   display: flex;
   align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .trend::after {
@@ -183,12 +184,6 @@
   background-color: #000000;
   opacity: 0.6;
   z-index: -1;
-}
-
-.trend {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
 .trend__a {
@@ -220,8 +215,8 @@
   list-style-type: none;
 }
 
-.content-block-list {
-  padding-right: 15px;
+.content-block-list:nth-child(2n) {
+  padding-left: 10px;
 }
 
 .caption {
@@ -238,7 +233,7 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .news-blog {
@@ -322,11 +317,6 @@
   line-height: 1.5;
 }
 
-.aside {
-  max-width: 270px;
-  margin-left: 120px;
-}
-
 .new-header {
   text-align: center;
   font-family: OpenSans;
@@ -403,6 +393,7 @@
   padding-left: 18px;
   padding-right: 18px;
   font-size: 13px;
+  flex: 1 1 auto;
 }
 
 .search-button {
@@ -687,8 +678,12 @@
  text-align: center;
 }
 
+.popup-container{
+ margin-top: auto;
+ margin-bottom: auto;
+}
+
 .title-popup {
-  margin-bottom: 25px;
   text-transform: uppercase;
   font-size: 18px;
   font-family: OpenSans;
@@ -701,7 +696,8 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 25px;
   width: 66px;
   height: 3px;
   background: #e1d9bd;
@@ -709,30 +705,40 @@
 
 .popup_hidden {
  display: flex; 
+ display: none;
  justify-content: center;
  position: fixed;
- z-index: 0;
+ z-index: 9999;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
 }
 
-.popup_hidden:before {
-  content:"";
-  position: relative;
-  opacity: 0.8;
-  z-index: -2;
+.popup_hidden:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .popup-contant {
   width: 390px;
-  height:600px;
+  height: auto;
   background-color: #ffffff;
-  padding: 50px 35px;
+  padding: 35px 35px;
   font-family: OpenSans;
   font-size: 15px;
   line-height: 1.5;
 }
 
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .label-text {
@@ -758,11 +764,9 @@
   color: #989898;
 }
 
-
 .select:focus {
   outline: 2px double #e1d9bd;
 }
-
 
 .form-radio-group{
   display: flex;
@@ -771,7 +775,7 @@
 
 .radio-group {
   margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 
@@ -836,8 +840,19 @@
   color: #ffffff;
   font-family: OpenSans;
   cursor: pointer;
-  
 }
+
+.button-close{
+  background-image: url(../svg/form-x.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin-left: 95%;
+  border:none;
+  width: 15px;
+  height: 20px;
+  cursor: pointer;
+}
+
 
 @media (min-width: 1200px){
   .product {
@@ -848,12 +863,29 @@
     display: none;
   }
 
+  .trend {
+    width: 24.8%;
+    min-height: 320px;
+  }
+
   .trend:nth-child(-n + 3) {
     margin-right: 3px;
   }
 
   .contents {
-    margin-top: 60px;}
+    margin-top: 60px;
+  }
+
+  .aside {
+    max-width: 270px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
+  .trend{
+    width: 24.8%;
+  }
+
 }
 
 @media (min-width: 641px) and (max-width: 1199px)  {
@@ -871,16 +903,18 @@
   }
 
   .trend {
-    width: 49.84%;
+    width: 49.7%;
     margin-bottom: 3px;
   }
 
   .menu {
     justify-content: space-between;
   }
+
   .logo {
   margin-left: 35px;
   }
+
   .menu-list {
     display: none;
   }
@@ -909,7 +943,7 @@
   }
 
   .contents{
-   justify-content: center;
+   justify-content: space-around;
    max-width: 768px;
   }
   
@@ -937,29 +971,16 @@
   }
 }
 
-/*@media (min-width: 641px) and (max-width: 1199px) and (orientation: portrait) {
+@media (max-width: 640px) and (orientation: landscape) {
   .container-block{
     justify-content: space-between;
   }
 
-  .trend:nth-child(odd) {
-    margin-right: 3px;
-  }
-
   .trend {
-    width: 49.84%;
+    width: 49.7%;
     margin-bottom: 3px;
   }
 }
-
-@media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
-  .trend{
-    width: 24.82%;
-  }
-  .trend:nth-child(-n + 3) {
-    margin-right: 3px;
-  }
-}*/
 
 @media (max-width: 640px) {
   .header {
@@ -994,17 +1015,18 @@
     max-width: 275px;
     margin-top: 45px;
   }
-  .trend {
-    width: 100%;
-    margin: 0 0 3px;
-  } 
 
+  .trend {
+   width: 100%;
+   margin: 0 0 3px;
+  } 
+  
   .contents{
     justify-content: center;
     max-width: 360px;
     flex-wrap: wrap;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 45px;
   }
 
@@ -1013,6 +1035,7 @@
   }
   
   .posts {
+   max-width: 330px;
    flex-wrap: wrap;
   }
 
@@ -1020,25 +1043,22 @@
     border-style: none none solid none;
     border-width: 3px;
     border-color: #eeeeee;
-    
     padding-bottom: 17px;
-    
   }
 
   .news-preview {
-   margin-left: auto;
-   margin-right: auto;
+   width: 330px;
   }
 
 
   .aside {
-    width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .search {
-    max-width: 100%;
+  .field {
+    width: 283px;
   }
 
   .product-container {
@@ -1060,26 +1080,32 @@
   .footer-social {
     max-width: 360px;
   }
-}
 
-/*@media (max-width: 640px) and (orientation: portrait) {
-  .trend {
-    width: 100%;
-    margin: 0 0 3px;
+  .title-popup {
+    font-size: 13px;
   } 
+
+  .popup-contant {
+    width: 330px;
+    font-size: 11px;
+  }
+
+  .select {
+    font-size: 11px;
+  }
+
+  .field-textarea {
+    font-size: 11px;
+  }
+  
+  .button {
+    height: 45px;
+    font-size: 11px;
+  }
+  
+  .button-close{
+    margin-left: 90%;
+    width: 35px;
+    height: 35px;
+  }
 }
-
-@media (max-width: 640px) and (orientation: landscape) {
-  .container-block{
-    justify-content: space-between;
-  }
-
-  .trend:nth-child(odd) {
-    margin-right: 3px;
-  }
-
-  .trend {
-    width: 49.84%;
-    margin-bottom: 3px;
-  }
-}*/
